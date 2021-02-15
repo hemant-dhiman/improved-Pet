@@ -1,3 +1,19 @@
 micronaut:
   application:
     name: pet
+  security:
+    authentication: bearer
+    enabled: true
+    endpoints:
+      login:
+        enabled: true
+    token:
+      jwt:
+        cookie:
+          enabled: true
+        enabled: true
+        signatures:
+          secret:
+            generator:
+              secret: pleaseChangeThisSecretForANewOne
+              jws-algorithm: HS256
